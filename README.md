@@ -20,12 +20,12 @@
 ## message table
 
 
-|   Column   |     Type    |              Options                |
-|:----------:|:-----------:|:-----------------------------------:|
-| user_id    | integer     |foreign_key: true                    |
-| group_id   | integer     |                                     |
-| body       | text        |                                     |
-| image      | string      |                                     |
+|   Column   |       Type      |            Options              |
+|:----------:|:---------------:|:-------------------------------:|
+| user_id    | references:user |foreign_key: true                |
+| group_id   | integer         |                                 |
+| body       | text            |                                 |
+| image      | string          |                                 |
 
 ### Association
 
