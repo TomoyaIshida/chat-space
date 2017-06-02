@@ -22,15 +22,16 @@
 
 |   Column   |     Type    |              Options                |
 |:----------:|:-----------:|:-----------------------------------:|
-| user__id   | integer     |                                     |
+| user_id    | integer     |foreign_key: true                    |
 | group_id   | integer     |                                     |
 | body       | text        |                                     |
 | image      | string      |                                     |
 
 ### Association
 
-* belongs_to : user
+* belongs_to:user
 
+* belongs_to:group
 
 ## group table
 
@@ -38,13 +39,14 @@
 |   Column   |     Type    |              Options                |
 |:----------:|:-----------:|:-----------------------------------:|
 | groupname  | string      |                                     |
-| user_id    | integer     |                                     |
 
 ### Association
 
 * has_many :users, through: :members
 
 * has_many:messages
+
+* has_many:members
 
 
 ## members table
