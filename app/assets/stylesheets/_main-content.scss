@@ -1,0 +1,127 @@
+$chat-fontcolor: #434a54;
+$info-fontcolor: #999999;
+$button-color: #38aef0;
+$main-contents-width: calc(100vw - 300px - 80px);
+
+.main-content{
+  height: 100%;
+  &__top{
+    height: 100px;
+    width: $main-contents-width;
+    background-color: #FFF;
+    float: left;
+    padding: 0 40px;
+    border-bottom: 1px solid #eee;
+      &__groupinfo{
+        float: left;
+          &__groupname{
+            margin-top: 35px;
+            margin-bottom: 15px;
+            p{
+              font-size: 20px;
+              color: #333333;
+            }
+          }
+          &__members{
+              p{
+                font-size: 12px;
+                color: $info-fontcolor;
+              }
+          }
+      }
+      &__edit-button {
+        height: 40px;
+        width: 70px;
+        float: right;
+        background-color: #fff;
+        margin-top: 28px;
+          p{
+            color: $button-color;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid $button-color;
+          }
+      }
+  }
+  &__center{
+    height: calc(100% - 100px - 90px - 1px);
+    width: $main-contents-width;
+    background-color: #F5F5F5;
+    float: left;
+    padding: 0 40px;
+      &__chatinfo{
+        height: 60px;
+        width: 100%;
+        float: left;
+        margin-top: 46px;
+        &__username{
+          float: left;
+          margin-bottom: 10px;
+            p{
+              font-size: 16px;
+              font-weight: bold;
+              color: $chat-fontcolor;
+            }
+        }
+        &__date{
+          float: left;
+          margin-left: 10px;
+            p{
+              font-size: 12px;
+              color: $info-fontcolor;
+            }
+        }
+        &__message{
+          float: left;
+          clear: both;
+          margin-bottom: 40px;
+            p{
+              font-size: 14px;
+              color: $chat-fontcolor;
+            }
+        }
+      }
+  }
+  &__bottom{
+    height: 90px;
+    width: $main-contents-width;
+    float: left;
+    background-color: #CCCCCC;
+    padding: 0 40px;
+      &__messagebox{
+        height: 50px;
+        width: 945px;
+        background-color: #fff;
+        float: left;
+        margin: 20px 15px 20px 0;
+          p{
+            font-size: 16px;
+            color: $chat-fontcolor;
+            line-height: 50px;
+            padding-left: 10px;
+            float: left;
+          }
+          i{
+            line-height: 50px;
+            float: right;
+            margin-right: 10px;
+            cursor: pointer;
+          }
+          input{
+            display: none;
+          }
+      }
+      &__send-button{
+        height: 50px;
+        width: 100px;
+        background-color: $button-color;
+        float: left;
+        margin: 20px 0;
+          p{
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+          }
+      }
+  }
+}
