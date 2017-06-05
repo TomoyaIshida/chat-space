@@ -1,5 +1,6 @@
 $chat-fontcolor: #434a54;
 $info-fontcolor: #999999;
+$button-color: #38aef0;
 $main-contents-width: calc(100vw - 300px - 80px);
 
 .main-content{
@@ -35,10 +36,10 @@ $main-contents-width: calc(100vw - 300px - 80px);
         background-color: #fff;
         margin-top: 28px;
           p{
-            color: #38aef0;
+            color: $button-color;
             text-align: center;
             line-height: 40px;
-            border: 1px solid #38aef0;
+            border: 1px solid $button-color;
           }
       }
   }
@@ -95,7 +96,7 @@ $main-contents-width: calc(100vw - 300px - 80px);
         margin: 20px 15px 20px 0;
           p{
             font-size: 16px;
-            color: #434A54;
+            color: $chat-fontcolor;
             line-height: 50px;
             padding-left: 10px;
             float: left;
@@ -113,7 +114,7 @@ $main-contents-width: calc(100vw - 300px - 80px);
       &__send-button{
         height: 50px;
         width: 100px;
-        background-color: #38aef0;
+        background-color: $button-color;
         float: left;
         margin: 20px 0;
           p{
