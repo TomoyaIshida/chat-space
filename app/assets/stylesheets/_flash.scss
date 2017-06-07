@@ -1,10 +1,13 @@
+$flashmessage-alert-color: #e74c3c;
+$flashmessage-notice-color: #38AEF0;
+
 .flash {
   color: #fff;
   text-align: center;
   &__alert{
-    background-color: #e74c3c;
+    background-color: $flashmessage-alert-color;
   }
   &__notice {
-    background-color: #38AEF0;
+    background-color: $flashmessage-notice-color;
   }
 }
