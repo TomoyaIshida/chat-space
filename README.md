@@ -22,9 +22,9 @@
 
 |   Column   |       Type      |            Options              |
 |:----------:|:---------------:|:-------------------------------:|
-| user_id    | references:user |foreign_key: true                |
-| group_id   | integer         |                                 |
-| body       | text            |                                 |
+| user_id    | references:user |foreign_key: true, index: true   |
+| group_id   | references:group|foreign_key: true, index: true   |
+| body       | text            |null:false                       |
 | image      | string          |                                 |
 
 ### Association
@@ -38,7 +38,7 @@
 
 |   Column   |     Type    |              Options                |
 |:----------:|:-----------:|:-----------------------------------:|
-| groupname  | string      |                                     |
+| groupname  | string      |null:false                           |
 
 ### Association
 
@@ -52,10 +52,10 @@
 ## members table
 
 
-|   Column   |     Type    |              Options                |
-|:----------:|:-----------:|:-----------------------------------:|
-| group_id   | integer     |                                     |
-| user_id    | integer     |                                     |
+|   Column   |       Type      |            Options              |
+|:----------:|:---------------:|:-------------------------------:|
+| user_id    | references:user |foreign_key: true, index: true   |
+| group_id   | references:group|foreign_key: true, index: true   |
 
 ### Association
 
