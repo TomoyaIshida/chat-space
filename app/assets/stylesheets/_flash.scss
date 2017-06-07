@@ -1,8 +1,7 @@
-$flashmessage-alert-color: #e74c3c;
-$flashmessage-notice-color: #38AEF0;
+@import "variable.scss";
 
 .flash {
-  color: #fff;
+  color: $flashmessage-font-color;
   text-align: center;
   &__alert{
     background-color: $flashmessage-alert-color;
