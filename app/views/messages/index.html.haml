@@ -4,13 +4,14 @@
     = current_user.name
     = link_to edit_user_path(current_user) do
       %i.fa.fa-cog
-    = link_to "" do
+    = link_to new_group_path do
       %i.fa.fa-edit
-  .left-content__main
-    .left-content__main--groupname
-      %p Hello World
-    .left-content__main--message
-      %p まだメッセージはありません。
+  - current_user.groups.each do |group|
+    .left-content__main
+      .left-content__main--groupname
+        %p= group.groupname
+      .left-content__main--message
+        %p まだメッセージはありません。
 .main-content
   .main-content__top
     .main-content__top__groupinfo
