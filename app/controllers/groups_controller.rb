@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :move_to_edit, only: [:edit, :update]
+  before_action :get_group, only: [:edit, :update]
 
   def index
   end
@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:groupname, user_ids: [])
   end
 
-  def move_to_edit
+  def get_group
     @group = Group.find(params[:id])
   end
 end
