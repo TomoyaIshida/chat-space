@@ -1,27 +1,3 @@
 !!!
 = render 'shared/left-content'
-.main-content
-  .main-content__top
-    .main-content__top__groupinfo
-      .main-content__top__groupinfo__groupname
-        %p sampleグループ
-      .main-content__top__groupinfo__members
-        %p Members: Tomoya_Ishida
-    .main-content__top__edit-button
-      %p Edit
-  .main-content__center
-    .main-content__center__chatinfo
-      .main-content__center__chatinfo__username
-        %p Tomoya Ishida
-      .main-content__center__chatinfo__date
-        %p 2017/06/03 16:01:30
-      .main-content__center__chatinfo__message
-        %p Hello World!!
-  .main-content__bottom
-    .main-content__bottom__messagebox
-      %p type a message
-      %label.file
-        %input{:type => "file", :id => "file"}/
-        %i.fa.fa-edit
-    .main-content__bottom__send-button
-      %p Send
+= render 'shared/main-content'
