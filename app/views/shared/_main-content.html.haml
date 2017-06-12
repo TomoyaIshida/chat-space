@@ -3,19 +3,14 @@
   .main-content__top
     .main-content__top__groupinfo
       .main-content__top__groupinfo__groupname
-        %p sampleグループ
+        = @group.groupname
       .main-content__top__groupinfo__members
-        %p Members: Tomoya_Ishida
+        %p Members:&nbsp;
+        = render partial: "shared/member"
     .main-content__top__edit-button
-      %p Edit
+      = link_to "Edit", edit_group_path(@group.id), id: "edit"
   .main-content__center
-    .main-content__center__chatinfo
-      .main-content__center__chatinfo__username
-        %p Tomoya Ishida
-      .main-content__center__chatinfo__date
-        %p 2017/06/03 16:01:30
-      .main-content__center__chatinfo__message
-        %p Hello World!!
+    = render partial: "shared/message"
   .main-content__bottom
     = form_for ([@group,@message]) do |f| 
       = f.text_field :body, placeholder: "type a message", class: "main-content__bottom__messagebox"

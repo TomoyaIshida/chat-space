@@ -9,6 +9,6 @@
   - current_user.groups.each do |group|
     .left-content__main
       .left-content__main--groupname
-        %p= group.groupname
+        = link_to group.groupname, group_messages_path(group), id: "groupname"
       .left-content__main--message
-        %p まだメッセージはありません。
+        = chatinfo(group)

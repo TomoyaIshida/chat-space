@@ -4,6 +4,7 @@
  min-height: 100%;
  width: 300px;
  float: left;
+ overflow:scroll;
    &__top{
     height: 100px;
     width: $left-contents-width;
@@ -26,12 +27,14 @@
     width: $left-contents-width;
     background-color: #2f3e51;
     padding: 20px 20px 20px 20px;
-      &--groupname p{
+      &--groupname #groupname{
         color: $fontcolor;
         font-size: 15px;
         margin-bottom: 5px;
+        text-decoration: none;
+        display: block;
       }
-      &--message p{
+      &--message {
         color: $fontcolor;
         font-size: 11px;
       }
