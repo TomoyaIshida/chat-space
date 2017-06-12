@@ -11,7 +11,7 @@
       .left-content__main--groupname
         = link_to group.groupname, group_messages_path(group), id: "groupname"
       .left-content__main--message
-        - if group.messages.empty?
+        - if group.messages.blank?
           %p まだメッセージはありません。
         - elsif group.messages.last.image.present?
           %p 画像が投稿されています。
