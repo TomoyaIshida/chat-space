@@ -50,7 +50,6 @@
     padding: 0 40px;
     overflow:scroll;
       &__chatinfo{
-        height: 60px;
         width: 100%;
         float: left;
         margin-top: 46px;
@@ -74,11 +73,18 @@
         &__message{
           float: left;
           clear: both;
-          margin-bottom: 40px;
+          // margin-bottom: 40px;
             p{
               font-size: 14px;
               color: $chat-fontcolor;
             }
+        // &__image{
+        //   height: 100%;
+        //   float: left;
+        //   image{
+        //     float: left;
+        //   }
+        // }
         }
       }
   }

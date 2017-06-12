@@ -13,7 +13,7 @@
       .left-content__main--message
         - if group.messages.empty?
           %p まだメッセージはありません。
-        - elsif group.messages.present?
-          = group.messages.last.body
-        - else
+        - elsif group.messages.last.image.present?
           %p 画像が投稿されています。
+        - else
+          = group.messages.last.body
