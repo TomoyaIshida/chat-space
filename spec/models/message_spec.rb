@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Message do
   describe '#create' do
-    context 'saveできた場合' do
+    context 'メッセージを保存できる場合' do
       it "is valid with a body, image" do
         message = build(:message)
         expect(message).to be_valid
@@ -19,7 +19,7 @@ describe Message do
       end
     end
 
-    context 'saveできなかった場合' do
+    context 'メッセージを保存できない場合' do
       it "is invalid without a body, image" do
         user = build(:message, body: nil, image: nil)
         user.valid?
