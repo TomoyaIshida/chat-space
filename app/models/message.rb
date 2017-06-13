@@ -7,4 +7,7 @@ class Message < ApplicationRecord
   def have_image?
     image.present?
   end
+
+  validates :group_id, presence: true
+  validates :user_id, presence: true
 end
