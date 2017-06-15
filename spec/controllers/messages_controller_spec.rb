@@ -50,6 +50,11 @@ describe MessagesController, type: :controller do
           post :create, params: { message: attributes_for(:message, { body: message.body }),group_id: group.id, user_id: user.id}
           expect(response).to redirect_to group_messages_path(group.id)
         end
+
+        it "成功時のフラッシュメッセージが表示されるか？" do
+          post :create, params: { message: attributes_for(:message, { body: message.body }),group_id: group.id, user_id: user.id}
+          expect(flash[:notice]).to include("メッセージを送信しました")
+        end
       end
 
       context 'ログインしているが、保存に失敗した場合' do
@@ -60,6 +65,10 @@ describe MessagesController, type: :controller do
         it "意図したビュー(index)に遷移するか？" do
           post :create, params: { message: attributes_for(:message, { body: nil, image: nil }),group_id: group.id, user_id: user.id}
           expect(response).to render_template :index
+        end
+        it "失敗時のフラッシュメッセージが表示されるか？" do
+          post :create, params: { message: attributes_for(:message, { body: nil, image: nil }),group_id: group.id, user_id: user.id}
+          expect(flash[:alert]).to include("メッセージを入力してください")
         end
       end
     end
