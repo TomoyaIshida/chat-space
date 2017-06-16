@@ -12,7 +12,7 @@
   .main-content__center
     = render partial: "shared/message"
   .main-content__bottom
-    = form_for [@group,@message], html: { class: 'form js-form' } do |f| 
+    = form_for [@group, @message], html: { class: 'form js-form' } do |f| 
       = f.text_field :body, placeholder: "type a message", class: "main-content__bottom__messagebox js-form__text-field"
       = f.label "image", { class: "fa fa-image"} do
         = f.file_field :image, style: "display: none;", class: "js-form__image"
