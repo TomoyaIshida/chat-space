@@ -7,6 +7,7 @@ $(function() {
                 '</div>';
     return new_member;
   }
+
   $(document).on('keyup', '#user-search-field', function(e){
     e.preventDefault();
     var input = $.trim($(this).val());
@@ -18,13 +19,15 @@ $(function() {
       contentType: false,
       dataType: 'json'
     })
+
     .done(function(data){
       var $form = $('#user-search-result')
         $form.find('li').remove();
         $(data).each (function(i, user){
-        $form.append('<li>' + new_member(user) + '</li>')
+          $form.append('<li>' + new_member(user) + '</li>')
       });
     })
+
     .fail(function(data) {
       alert('ユーザー検索に失敗しました');
     });
