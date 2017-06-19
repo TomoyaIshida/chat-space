@@ -35,4 +35,45 @@ $(function() {
       alert('メッセージを入力してください');
     });
   });
+
+  function buildHTML(message) {
+    var insertImage = '';
+    if (message.image.url) {
+      insertImage = `<img src="${message.image.url}">`;
+    }
+    var html = `
+      <div class="main-content__center__chatinfo">
+        <div class="main-content__center__chatinfo__username"><p>${message.name}</p></div>
+        <div class="main-content__center__chatinfo__date"><p>${message.time}</p></div>
+        <div class="main-content__center__chatinfo__message"><p>${message.body}</p>${insertImage}</div>
+      </div>`;
+    return html
+  }
+
+  var interval = setInterval(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        dataType: 'json',
+        processData: false,
+        contentType: false,
+      })
+
+      .done(function(json) {
+        var insertHTML = '';
+        json.messages.forEach(function(message) {
+          insertHTML += buildHTML(message);
+        });
+        $('.main-content__center').html(insertHTML);
+        $('.main-content__center').animate({scrollTop: $('.main-content__center')[0].scrollHeight}, 'fast');
+      })
+
+      .fail(function(data) {
+        alert('自動更新に失敗しました');
+      });
+    } else {
+      clearInterval(interval);
+    }
+  }, 5000 );
 });
