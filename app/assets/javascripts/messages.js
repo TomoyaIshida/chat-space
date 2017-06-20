@@ -40,7 +40,7 @@ $(function() {
     var insertImage = '';
     if (message.image.url) {
       insertImage = `<img src="${message.image.url}">`;
-    }
+    };
     var html = `
       <div class="main-content__center__chatinfo">
         <div class="main-content__center__chatinfo__username"><p>${message.name}</p></div>
@@ -48,7 +48,7 @@ $(function() {
         <div class="main-content__center__chatinfo__message"><p>${message.body}</p>${insertImage}</div>
       </div>`;
     return html
-  }
+  };
 
   var interval = setInterval(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
