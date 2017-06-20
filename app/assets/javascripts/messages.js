@@ -62,11 +62,12 @@ $(function() {
 
       .done(function(json) {
         var insertHTML = '';
+        var $chatspace = $('.main-content__center')
         json.messages.forEach(function(message) {
           insertHTML += buildHTML(message);
         });
-        $('.main-content__center').html(insertHTML);
-        $('.main-content__center').animate({scrollTop: $('.main-content__center')[0].scrollHeight}, 'fast');
+        $chatspace.html(insertHTML);
+        $chatspace.animate({scrollTop: $chatspace[0].scrollHeight}, 'fast');
       })
 
       .fail(function(data) {
